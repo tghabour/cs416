@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <style media="screen">
+    /* div {
+        border: 1px solid black;
+      } */
+    .header {
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .left {
+      flex: 0 0 400px;
+      padding-right: 18px;
+      font-family: Helvetica, sans-serif;
+      text-align: justify;
+    }
+
+    button {
+      border: 1px solid #fff;
+      padding-top: 6px;
+      padding-bottom: 6px;
+      padding-left: 9px;
+      padding-right: 9px;
+      margin-left: -6px;
+      cursor: pointer;
+    }
+
+    .active {
+      font-weight: bold;
+      background-color: #dddddd;
+    }
+
+    button:hover {
+      background-color: #dddddd;
+    }
+
+    .line {
+      fill: none;
+      stroke: #EF5285;
+      stroke-width: 4px;
+    }
+
+    line {
+      fill: none;
+      stroke-width: 2px;
+    }
+
+    circle {
+      fill: #fff;
+      stroke: #D3D3D3;
+      stroke-width: 1px;
+    }
+
+    g.month text {
+      font-size: 12px;
+      letter-spacing: 0.03em;
+    }
+
+    .footer {
+      color: #808080;
+      font-style: italic;
+      font-size: .9em;
+      line-height: 1.2727em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div>
+      <h2 style="font-weight: 800; text-align: center; letter-spacing: 8px; text-transform: uppercase;">Bitcoin's Untold Story</h2>
+    </div>
+    <div>
+      <p style="text-align: center; letter-spacing: 3px; color: rgb(94, 94, 94); text-transform: uppercase;">by Anthony Ghabour</p>
+    </div>
+  </div>
+
+
+  <div class="content flex-container">
+    <div class="left column">
+      <div class="buttons">
+        <button type="button" name="2016" class="active summary" onclick="changeNarrative(this)" >ALL</button>
+        <button type="button" name="2017" class="inactive" onclick="changeNarrative(this)" style="color:#A93226;">2017</button>
+        <button type="button" name="2018" class="inactive" onclick="changeNarrative(this)" style="color:#E74C3C;">2018</button>
+        <button type="button" name="2019" class="inactive" onclick="changeNarrative(this)" style="color:#f0b216;">2019</button>
+        <button type="button" name="2020" class="inactive" onclick="changeNarrative(this)" style="color:#339966;">2020</button>
+        <button type="button" name="2021" class="inactive" onclick="changeNarrative(this)" style="color:#5965A3;">2021</button>
+        <button type="button" name="2022" class="inactive" onclick="changeNarrative(this)" style="color:#730099;">2022</button>
+        <button type="button" name="Next" class="inactive" onclick="nextNarrative(this)">NEXT</button>
+      </div>
+      <div class="narrative">
+        <div class="2016 summary">
+          <p style="color:black; font-size:larger;"> <b>Start here! This is the summary.</b></p>
+          <p>
+            There has been considerable media coverage of Bitcoin (BTC) and other cryptocurrencies (including NFTs)
+            for a number years, but the stories routinely focus on one key indicator of interest: PRICE.
+            But what about volume?
+
+            <br><br>
+            In general, <i>volume</i> refers to the total value of an asset that has been bought and sold during the specified period of time.
+            Trading volume is often analyzed in conjuction with price changes to confirm the existence, continuation or reversal of a trend.
+            Consequently, volume indicators can provide investors with signals regarding when to enter (buy) or exit (sell) their position.
+
+            <br><br>
+            In a mature market, volume and price work together to create such signals as follows<sup>[1]</sup>:
+
+          <ul>
+            <li>Increasing volume + increasing prices: <br>potential buying opportunity</li><br>
+            <li>Increasing volume + decreasing prices: <br>best to stay on the sidelines</li><br>
+            <li>Declining volume + decreasing prices: <br>opportunity to sell and take profits</li><br>
+            <li>Declining volume + increasing prices: <br>may indicate a coming reversal and a time to buy</li><br>
+          </ul>
+
+          </p>
+        </div>
+        <div class="2017" hidden>
+          <p style="color:#A93226; font-size:larger;"> <b>Bitcoin Becomes Legitimate</b></p>
+          <p>
+            Although BTC and other cryptocurrencies had been around for a number of years, 2017 marks the first year BTC truly
+            gained widespread, public attention.
+            <br><br>
+            It was a year marked by multiple record-setting highs (both in terms
+            of price AND volume). The close connection between these two indicators of interest marked a strong momentum
+            signal and
+
+            <br><br>The following milestones in 2017 contributed to Bitcoin's traction:
+            <sup>[2]</sup></p>
+          <ul>
+            <li>Major banks such as Barclays, Citi Bank and Deutsche Bank annouce they are investigating ways they might be able to work with Bitcoin.</li><br>
+            <li>Japan and Russia annouce plans to accept bitcoin as a legal payment method and legalize the use of cryptocurrencies. </li><br>
+            <li></li><br>
+          </ul>
+        </div>
+        <div class="2018" hidden>
+          <p style="color:#E74C3C; font-size:larger;"> <b>"Crypto Winter"</b></p>
+          <p>
+            After breaking $1,000 and swiftly soaring to highs in excess of $20K in 2017, it’s easy to understand why 2018
+            is commonly referred to as the “Crypto Winter” among those who follow it closely.
+          </p>
+
+          <ul>
+            <li>Japan's largest over-the-counter crypto marketplace is hacked and assets valued at $530 million USD are stolen.</li><br>
+            <li>South Korea bans annonymous BTC transactions.</li><br>
+            <li>Online payment company Stripe announces it will phase out support for BTC payments.</li><br>
+          </ul>
+        </div>
+        <div class="2019" hidden>
+          <p style="color:#f0b216; font-size:larger;"> <b>This is the narrative for 2019</b></p>
+        </div>
+        <div class="2020" hidden>
+          <p style="color:#339966; font-size:larger;"> <b>The Pandemic</b></p>
+        </div>
+        <div class="2021" hidden>
+          <p style="color:#5965A3; font-size:larger;"> <b>Volatility...on a New Scale</b></p>
+        </div>
+        <div class="2022" hidden>
+          <p style="color:#730099; font-size:larger;"> <b>Historic Inflation</b></p>
+        </div>
+      </div>
+    </div>
+    <div class="right column" id="my_dataviz">
+    </div>
+  </div>
+  <div class="flex-container">
+    <div class="footer">
+      <div class="2016 footer">
+        [1] <a href="https://www.investopedia.com/ask/answers/041015/why-trading-volume-important-investors.asp">
+          Using Trading Volume to Understand Investment Activity</a>
+      </div>
+
+      <div class="2017 footer" hidden>
+        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+      </div>
+
+      <div class="2018 footer" hidden>
+        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+      </div>
+
+      <div class="2019 footer" hidden>
+        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+      </div>
+
+      <div class="2020 footer" hidden>
+        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+      </div>
+
+      <div class="2021 footer" hidden>
+        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+      </div>
+
+      <div class="2022 footer" hidden>
+        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.js"></script>
+  <script src="change_functions.js"></script>
+  <script src="d3_elements.js"></script>
+  <script src="d3_functions.js"></script>
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+      var width = document.querySelector('.left').offsetWidth + document.querySelector('.right').offsetWidth;
+      width = String(width) + "px";
+      var x = document.querySelector('.left').getBoundingClientRect().x - 8;
+      x = String(x) + "px";
+      // document.querySelector('.footer').style.marginLeft = x;
+      document.querySelector('.footer').style.width = width;
+    })
+  </script>
+</body>
+
+</html>
