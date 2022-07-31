@@ -18,12 +18,13 @@ var svg = d3.select("#my_dataviz")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
 
-svg.append("text")
+ source = svg.append("text")
   .text("Data: https://finance.yahoo.com/quote/BTC-USD/history/")
-  .attr("x", 710)
-  .attr("y", 625)
+  .attr("x", width - 230)
+  .attr("y", height + 45)
   .style("font-size", 'x-small')
   .style("fill", "grey");
+
 
 // add labels
 svg.append('g')
@@ -31,13 +32,17 @@ svg.append('g')
     .append('text')
     .attr('text-anchor', 'middle')
     .attr('transform', 'rotate(-90)')
-    .text('BTC Price (USD)');
+    .text('BTC Price (USD)')
+    .style('font-size', 'smaller')
+    .style('font-family', 'Helvetica, sans-serif');
 
 svg.append('g')
     .attr('transform', 'translate(' + width / 2 + ', ' + (height + 40) + ')')
     .append('text')
     .attr('text-anchor', 'middle')
-    .text('Volume (Billions)');
+    .text('Volume (Billions)')
+    .style('font-size', 'smaller')
+    .style('font-family', 'Helvetica, sans-serif');
 
 
 // Set the ranges
@@ -379,7 +384,7 @@ function createAnnotations(button_year){
     // page load parameters
     var create = [2017,2018,2019,2020,2021,2022];
     var xShift = {
-      "2017":-20,
+      "2017":-10,
       "2018":50,
       "2019":100,
       "2020":200,
