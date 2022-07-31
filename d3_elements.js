@@ -5,7 +5,7 @@ var margin = {
         bottom: 50,
         left: 75
     },
-    width = window.innerWidth - 550 - margin.left - margin.right,
+    width = window.innerWidth - 550 - margin.left - margin.right-100,
     height = window.innerHeight - 200 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -17,6 +17,13 @@ var svg = d3.select("#my_dataviz")
     .append("g")
     .attr("transform",
         "translate(" + margin.left + "," + margin.top + ")");
+
+svg.append("text")
+  .text("Data: https://finance.yahoo.com/quote/BTC-USD/history/")
+  .attr("x", 710)
+  .attr("y", 625)
+  .style("font-size", 'x-small')
+  .style("fill", "grey");
 
 // add labels
 svg.append('g')
@@ -153,7 +160,8 @@ var mousemove = function(d) {
     var rect = element.getBoundingClientRect();
 
     Tooltip
-        .html(d.month + ", " + d.year + "\n\n" + "Volume: " + d.volume + "\n" + "Price: " + d.price)
+        .html(d.month + ", " + d.year + "\n\n" +
+        "Closing Price: $" + Math.round(d.price,0).toLocaleString('en-US') +   "\n" + "Monthly Volume: $" + Math.round(d.volume,0).toLocaleString('en-US') + 'B' + "\n" )
         .style("white-space", "pre-line")
         .style("top",  (rect.top  + yScale(d.price)  + 25) + "px")
         .style("left", (rect.left + xScale(d.volume) + 90) + "px")
@@ -166,10 +174,11 @@ var mouseleave = function(d) {
         .transition()
         .duration(500)
         .style("opacity", 0)
-        pnt.attr("r", 2.5).style("stroke", "lightgray");
+        pnt.attr("r", 4).style("stroke", "lightgray");
+
+d3.selectAll(".date_").raise();
+
 }
-
-
 
 function buildElements(button_year){
     // filter data by year
@@ -207,7 +216,7 @@ function buildElements(button_year){
         .attr("class", function(d, i) {
             return "date_" + d.month + d.year;
         })
-        .attr("r", 3)
+        .attr("r", 4)
         .style("stroke", "lightgray")
         .style("fill", function(d) {
             return colors(d.year)
@@ -232,9 +241,9 @@ function buildElements(button_year){
         .append("circle")
         .attr("r", 2.5)
         .style("stroke", "lightgray")
-        // .style("fill", "Cyan")
-        .style("fill", "#26fce3")
-        .style("opacity", .3);
+        .style("fill", "pink")
+        // .style("fill", "#26fce3")
+        .style("opacity", .5);
 
     svg.selectAll("g.highlight").data(filtered_data).exit().remove();
     if (change) svg.selectAll("g.highlight").transition().attr("transform", point);
@@ -358,11 +367,11 @@ function buildElements(button_year){
 
 function createAnnotations(button_year){
   var titles = {
-    "2017":"Bitcoin Becomes Legitimate",
+    "2017":"Bitcoin Breaks Out",
     "2018":"Crypto Winter",
-    "2019":"2019 Title",
-    "2020":"The Pandemic",
-    "2021":"Volatility...on a New Scale",
+    "2019":"Rapid Recovery",
+    "2020":"Crypto During COVID",
+    "2021":"A New Scale",
     "2022":"Historic Inflation"
   }
 
@@ -370,20 +379,20 @@ function createAnnotations(button_year){
     // page load parameters
     var create = [2017,2018,2019,2020,2021,2022];
     var xShift = {
-      "2017":-125,
+      "2017":-20,
       "2018":50,
       "2019":100,
       "2020":200,
-      "2021":75,
+      "2021":-30,
       "2022":-150
     }
 
     var yShift = {
       "2017":-50,
       "2018":-50,
-      "2019":15,
+      "2019":5,
       "2020":-50,
-      "2021":-25,
+      "2021":75,
       "2022":-100
     }
 
@@ -391,8 +400,8 @@ function createAnnotations(button_year){
       "2017":".date_Dec2017",
       "2018":".date_Jan2018",
       "2019":".date_Apr2019",
-      "2020":".date_Nov2020",
-      "2021":".date_Sep2021",
+      "2020":".date_Oct2020",
+      "2021":".date_Mar2021",
       "2022":".date_Jun2022"
     }
   }
@@ -404,7 +413,7 @@ function createAnnotations(button_year){
       "2018":200,
       "2019":-100,
       "2020":-200,
-      "2021":75,
+      "2021":-30,
       "2022":-150
     }
 
@@ -413,28 +422,28 @@ function createAnnotations(button_year){
       "2018":-50,
       "2019":-50,
       "2020":-50,
-      "2021":-50,
+      "2021":75,
       "2022":-100
     }
 
     var attachMonth = {
       "2017":".date_Nov2017",
-      "2018":".date_Mar2018",
+      "2018":".date_Dec2018",
       "2019":".date_Jun2019",
       "2020":".date_Nov2020",
-      "2021":".date_Sep2021",
+      "2021":".date_Mar2021",
       "2022":".date_Jun2022"
     }
   }
 
   create.forEach((item, i) => {
-    var align = item=="2022" ? "right" : "left"
+    // var align = item=="2022" ? "right" : "left"
     const annotations = [{
         note: {
           label: item,
           title: titles[item],
           wrap: 160,
-          align: align
+          // align: align
         },
         dx: xShift[item],
         dy: yShift[item]
@@ -453,7 +462,7 @@ function createAnnotations(button_year){
 
 
       obj.select(".annotation-note-title")
-        .style("font-size", "15px")
+        // .style("font-size", "15px")
         .attr('fill', function(d) {
           return colors(d.year);
         })

@@ -21,7 +21,8 @@
       flex: 0 0 400px;
       padding-right: 18px;
       font-family: Helvetica, sans-serif;
-      text-align: justify;
+      line-height: 1.35;
+      /* text-align: justify; */
     }
 
     button {
@@ -88,7 +89,7 @@
   <div class="content flex-container">
     <div class="left column">
       <div class="buttons">
-        <button type="button" name="2016" class="active summary" onclick="changeNarrative(this)" >ALL</button>
+        <button type="button" name="2016" class="active summary" onclick="changeNarrative(this)">ALL</button>
         <button type="button" name="2017" class="inactive" onclick="changeNarrative(this)" style="color:#A93226;">2017</button>
         <button type="button" name="2018" class="inactive" onclick="changeNarrative(this)" style="color:#E74C3C;">2018</button>
         <button type="button" name="2019" class="inactive" onclick="changeNarrative(this)" style="color:#f0b216;">2019</button>
@@ -99,71 +100,135 @@
       </div>
       <div class="narrative">
         <div class="2016 summary">
-          <p style="color:black; font-size:larger;"> <b>Start here! This is the summary.</b></p>
+          <p style="color:black; font-size:larger;"> <b></b></p>
           <p>
-            There has been considerable media coverage of Bitcoin (BTC) and other cryptocurrencies (including NFTs)
-            for a number years, but the stories routinely focus on one key indicator of interest: PRICE.
-            But what about volume?
-
+            The media often features headlines about extreme spikes and tragic crashes in the price of Bitcoin (BTC),
+            but very little is ever said about the <i>amount</i> of the cryptocurrency being traded.<br><br>
+            The total value that has been bought and sold in a specified period of time (technically known as <b>volume</b>)
+            is often analyzed with price changes to identify the existence, continuation or reversal of a trend.
             <br><br>
-            In general, <i>volume</i> refers to the total value of an asset that has been bought and sold during the specified period of time.
-            Trading volume is often analyzed in conjuction with price changes to confirm the existence, continuation or reversal of a trend.
-            Consequently, volume indicators can provide investors with signals regarding when to enter (buy) or exit (sell) their position.
-
-            <br><br>
-            In a mature market, volume and price work together to create such signals as follows<sup>[1]</sup>:
-
+            Consequently, volume indicators can provide investors with signals for when to buy or when to sell.
+            In general, volume and price work together to create such signals as follows: <sup>[1]</sup>
           <ul>
-            <li>Increasing volume + increasing prices: <br>potential buying opportunity</li><br>
-            <li>Increasing volume + decreasing prices: <br>best to stay on the sidelines</li><br>
-            <li>Declining volume + decreasing prices: <br>opportunity to sell and take profits</li><br>
-            <li>Declining volume + increasing prices: <br>may indicate a coming reversal and a time to buy</li><br>
+            <li><b>Increasing volume + increasing prices: </b><br>potential buying opportunity</li>
+            <li><b>Increasing volume + decreasing prices: </b><br>best to stay on the sidelines</li>
+            <li><b>Decreasing volume + increasing prices: </b><br>may indicate a coming reversal and a time to buy</li>
+            <li><b>Decreasing volume + decreasing prices: </b><br>opportunity to sell and take profits</li>
           </ul>
 
           </p>
         </div>
         <div class="2017" hidden>
-          <p style="color:#A93226; font-size:larger;"> <b>Bitcoin Becomes Legitimate</b></p>
+          <p style="color:#A93226; font-size:larger;"> <b>Bitcoin Breaks Out</b></p>
           <p>
-            Although BTC and other cryptocurrencies had been around for a number of years, 2017 marks the first year BTC truly
-            gained widespread, public attention.
-            <br><br>
-            It was a year marked by multiple record-setting highs (both in terms
-            of price AND volume). The close connection between these two indicators of interest marked a strong momentum
-            signal and
-
-            <br><br>The following milestones in 2017 contributed to Bitcoin's traction:
-            <sup>[2]</sup></p>
+            Although Bitcoin had been around for a number of years, 2017 marks the first year it truly
+            gained widespread, public attention<br><br>
+            In a year when the value of one BTC increased 20-fold, it's no surprise interest in the asset exploded and monthly volume increased 80x.
+            The tight connection between price and volume quickly became a feedback loop that many deemed a bubble. <br><br>
+            Still, the signal to participate was too strong to ignore and Bitcoin officially went global:</p>
           <ul>
-            <li>Major banks such as Barclays, Citi Bank and Deutsche Bank annouce they are investigating ways they might be able to work with Bitcoin.</li><br>
-            <li>Japan and Russia annouce plans to accept bitcoin as a legal payment method and legalize the use of cryptocurrencies. </li><br>
-            <li></li><br>
+            <li>Major banks such as Barclays, Citi Bank and Deutsche Bank annouce they are investigating ways they might be able to work with Bitcoin. <sup>[2]</sup></li><br>
+            <li>Japan and Russia annouce plans to accept bitcoin as a legal payment method and legalize the use of cryptocurrencies. <sup>[3]</sup></li><br>
           </ul>
         </div>
         <div class="2018" hidden>
-          <p style="color:#E74C3C; font-size:larger;"> <b>"Crypto Winter"</b></p>
+          <p style="color:#E74C3C; font-size:larger;"> <b>Crypto Winter</b></p>
           <p>
-            After breaking $1,000 and swiftly soaring to highs in excess of $20K in 2017, it’s easy to understand why 2018
-            is commonly referred to as the “Crypto Winter” among those who follow it closely.
+            After soaring by an order of magnitude in 2017, it’s easy to understand why insiders refer to 2018 as the Crypto Winter.<br><br>
+            In early January, the first (and largest) of many major hacks resulted in the loss of over $500 million in crypto.
+            As hacks continued, many lost confidence in crypto's promise as a long-term store of value.<br><br>
+            Investors and speculators keen to cash in their newfound wealth were quickly replaced by hackers and criminals.
+            Much like the previous year, price and volume changes were in lockstep creating momentum and another feedback loop.<br><br>
+            This time, however, the signal was to sell.
           </p>
 
-          <ul>
-            <li>Japan's largest over-the-counter crypto marketplace is hacked and assets valued at $530 million USD are stolen.</li><br>
-            <li>South Korea bans annonymous BTC transactions.</li><br>
-            <li>Online payment company Stripe announces it will phase out support for BTC payments.</li><br>
-          </ul>
+          <!-- <ul>
+            <li>Online payment company Stripe announces it will phase out support for BTC payments.<sup>[2]</sup></li><br>
+          </ul> -->
         </div>
         <div class="2019" hidden>
-          <p style="color:#f0b216; font-size:larger;"> <b>This is the narrative for 2019</b></p>
+          <p style="color:#f0b216; font-size:larger;"> <b>Rapid Recovery</b></p>
+          After the boom and bust of 2017 and 2018, respectively, options trading gained momentum as
+          the NYSE launched its market for Bitcoin futures. An explosion in the exchange market led to
+          more aggressive competition and efficient markets, benefitting traders.<sup>[5]</sup> <br><br>
+
+          With a renewed sense of legitimacy and increased access the public, the volume of Bitcoin trading
+          increased sharply initiating yet another major signal to interested traders to (re)enter the market. Meanwhile,
+
+          <ul>
+            <li>The Chinese president, Xi Jinping, publicly supports blockchain technology after previously announcing plans to ban Bitcoin mining.<sup>[5]</sup></li><br>
+            <li>Facebook announces the development of its own cryptocurrency, Libra.<sup>[6]</sup></li><br>
+            <li>Multiple retailers to announce they will acceptance payments in the form of Bitcoin and other cryptocurrencies.<sup>[6]</sup></li>
+          </ul>
+
         </div>
         <div class="2020" hidden>
-          <p style="color:#339966; font-size:larger;"> <b>The Pandemic</b></p>
+          <p style="color:#339966; font-size:larger;"> <b>Crypto During COVID</b></p>
+
+          With the announcement of major stimulus packages accross the globe and the injection of
+          trillions of dollars into the global economy, many argued that the fixed supply of 21 million
+          coins would cause Bitcoin to behave less like an asset and more like a commodity such as gold...and
+          therefore serve as an opportunity to hedge against inflation.<br><br>
+
+          While the argument appears valid, the hypothesis was ultimately unverified.
+          Many experts still considered Bitcoin a highly speculative asset, but fear surrounding
+          the financial effects of the pandemic surpassed uncertainty about crypto as
+          investors were eager to find a safe haven.<br><br>
+
+          Ultimately, amid low interest rates and extreme financial uncertainty, Bitcoin surged by 300% in 2020
+          based on speculation that investors would hoard the digital currency.<sup>[7]</sup>
+
+
         </div>
         <div class="2021" hidden>
-          <p style="color:#5965A3; font-size:larger;"> <b>Volatility...on a New Scale</b></p>
+          <p style="color:#5965A3; font-size:larger;"> <b>A New Scale</b></p>
+
+          After soaring over 400% and reaching an all-time high of nearly $30K the previous year, the price of 1
+          BTC still managed to double in the first three months of 2021, with a market cap in excess of $1 trillion. <br><br>
+
+          The digital currency promptly fell 50% back to $30K before eventually rebounding to a new high and crashing again.
+          Monthly volume was also breaking new ground and receeding drastically; the digital currency was experiencing volatility on a whole new scale. <br><br>
+
+          Despite signifiacnt milestones in the crypto market, uncertainty about inflation and the emergence of
+          the Omicron variant continued to spook investors<sup>[8]</sup>:
+
+          <ul>
+            <li>Major crypto exchange, Coinbase, goes public.</li><br>
+            <li>El Salvador becomes the first country to accept Bitcoin as legal tender.</li><br>
+            <li>Morgan Stanley becomes the first big U.S. bank to offer its wealthy clients access to bitcoin funds.</li>
+          </ul>
+
+
+
+          <!-- https://www.investopedia.com/articles/forex/121815/bitcoins-price-history.asp -->
+
+
+          <!-- As legal tender, businesses are mandated to accept bitcoin as payment while the country opens 200 bitcoin ATMs that can convert US dollars to digital currency. -->
+
+          <!-- metaverse and NFTs -->
+          <!-- https://capital.com/bitcoin-btc-price-analysis-and-news -->
+
+
         </div>
         <div class="2022" hidden>
           <p style="color:#730099; font-size:larger;"> <b>Historic Inflation</b></p>
+
+          As supply chains are stretched, record inflation persists and stocks tumble,
+          Bitcoin and other cryptocoins face another test of resiliance against major market forces.
+          <br><br>
+          Earlier this year, TerraUSD - a stablecoin specifically designed to minimize volatility - lost its peg with
+          the U.S. dollar causing it and its companion token Luna to collapse.
+          The news triggered massive panic over broader crypto markets that resulted in a domino effect of
+          liquidations and bankruptcies.<sup>[9]</sup>
+          <br><br>
+          While interest remains high, the crypto market and related regulation remain in their infancy but continue to evolve.
+
+          New applications of blockchain technology like NFTs and the Metaverse continue to
+          entice investors, but the history of booms and busts has others wary of another bubble.
+          <br><br>
+          Whatever happens next, it's clear that interest is a tale of two metrics...and it behooves investors to also consider
+          <b>volume</b> before their next trade.
+
         </div>
       </div>
     </div>
@@ -177,28 +242,34 @@
           Using Trading Volume to Understand Investment Activity</a>
       </div>
 
+
+
       <div class="2017 footer" hidden>
-        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+        [2] <a href="https://www.forbes.com/sites/bernardmarr/2017/12/06/a-short-history-of-bitcoin-and-crypto-currency-everyone-should-read/?sh=344c17c33f27">A Short History Of Bitcoin And Crypto Currency Everyone Should Read</a><br>[3] <a
+          href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
       </div>
 
       <div class="2018 footer" hidden>
-        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+        [4] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
       </div>
 
       <div class="2019 footer" hidden>
-        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+        [5] <a href="https://medium.com/interdax/2019-in-review-top-10-cryptocurrency-events-themes-cae71a4aa38c">Top 10 Cryptocurrency Events & Themes in 2019</a><br>
+        [6] <a href="https://www.independent.co.uk/tech/bitcoin-price-latest-2019-cryptocurrency-market-facebook-btc-usd-trading-a8961921.html">Bitcoin price hits new 2019 high as cryptocurrency market continues surge</a><br>
+
+        <!-- https://www.tradingview.com/symbols/BTCUSD/history-timeline/#a-bit-release-is-here-2019-12-24 -->
       </div>
 
       <div class="2020 footer" hidden>
-        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+        [7] <a href="https://www.sciencedirect.com/science/article/pii/S1544612321001306">COVID-19 pandemic improves market signals of cryptocurrencies</a>
       </div>
 
       <div class="2021 footer" hidden>
-        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+        [8] <a href="https://www.tradingview.com/symbols/BTCUSD/history-timeline/#forget-mining-just-play-sudoku-2022-07-27">BTCUSD History - Timeline of Major Events</a>
       </div>
 
       <div class="2022 footer" hidden>
-        [2] <a href="https://en.wikipedia.org/wiki/History_of_bitcoin">History of bitcoin</a>
+        [9] <a href="https://cointelegraph.com/news/a-brief-history-of-bitcoin-crashes-and-bear-markets-2009-2022">A brief history of Bitcoin crashes and bear markets: 2009–2022</a>
       </div>
     </div>
   </div>
