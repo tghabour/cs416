@@ -86,6 +86,8 @@ var Tooltip = d3.select("#my_dataviz")
     .style("padding", "5px")
     .style("position", "absolute")
     .style("color", "white")
+    .style('font-size', 'smaller')
+    .style('font-family', 'Helvetica, sans-serif');
 
 var year = 2022;
 var marker = '';
@@ -154,7 +156,7 @@ var mouseover = function(d) {
     Tooltip
         .transition()
         .duration(200)
-        .style("opacity", 0.95)
+        .style("opacity", 0.9)
         pnt.attr("r", 6).style("stroke", "#000");
 }
 
@@ -248,12 +250,12 @@ function buildElements(button_year){
         .style("stroke", "lightgray")
         .style("fill", "pink")
         // .style("fill", "#26fce3")
-        .style("opacity", .5);
+        .style("opacity", .65);
 
     svg.selectAll("g.highlight").data(filtered_data).exit().remove();
     if (change) svg.selectAll("g.highlight").transition().attr("transform", point);
 
-    var minRadius = 2,
+    var minRadius = 0,
         maxRadius = 6;
 
     svg.selectAll("g.highlight").selectAll('circle').call(pulse, minRadius, maxRadius);
@@ -467,9 +469,9 @@ function createAnnotations(button_year){
 
 
       obj.select(".annotation-note-title")
-        // .style("font-size", "15px")
+        .style("font-size", "13px")
         .attr('fill', function(d) {
-          return colors(d.year);
-        })
+          return colors(d.year)
+        }).style('font-family', 'Helvetica, sans-serif');
   });
 }
